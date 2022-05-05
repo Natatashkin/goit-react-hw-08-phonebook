@@ -19,13 +19,12 @@ export function Layout() {
           </main>
           <footer>
             Developed by
-            <Link
-              reloadDocument
-              to="https://linkedin.com/in/nataliia-semeshenko"
+            <a
+              href="https://linkedin.com/in/nataliia-semeshenko"
               target="_blank"
             >
               Nataliia Semeshenko
-            </Link>
+            </a>
           </footer>
         </>
       )}
