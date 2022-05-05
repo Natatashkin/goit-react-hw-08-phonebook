@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, useMatch, Link } from 'react-router-dom';
+import { Outlet, useMatch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { AppBar } from 'components/AppBar';
 import { getIsRefreshing } from 'redux/auth/authSelectors';
@@ -22,6 +22,7 @@ export function Layout() {
             <a
               href="https://linkedin.com/in/nataliia-semeshenko"
               target="_blank"
+              rel="noreferrer"
             >
               Nataliia Semeshenko
             </a>
