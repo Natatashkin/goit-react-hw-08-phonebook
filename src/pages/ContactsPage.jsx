@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
-import { AppSyles, AppTitle } from 'components/App.styled';
+import { AppSyles } from 'components/App.styled';
 import AppForm from 'components/Form';
 import Section from 'components/Section';
 import Filter from 'components/Filter';
@@ -11,7 +11,6 @@ import ContactList from 'components/ContactList';
 import * as contactsOperations from 'redux/contacts/contactsOperations';
 import * as selectors from 'redux/contacts/contactsSelectors';
 import { getIsLoggedIn, getIsRefreshing } from 'redux/auth/authSelectors';
-import { Navigate } from 'react-router-dom';
 
 export function ContactsPage() {
   const dispatch = useDispatch();

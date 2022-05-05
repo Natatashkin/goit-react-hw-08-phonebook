@@ -5,9 +5,9 @@ import toast from 'react-hot-toast';
 import { FormField, Input, Label, ErrorMessageStyle } from './Form.styled';
 import Button from '../Button';
 import * as contactsOperations from 'redux/contacts/contactsOperations';
-import * as selectors from 'redux/contacts/contactsSelectors';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+// import * as selectors from 'redux/contacts/contactsSelectors';
+import { useDispatch } from 'react-redux';
+// import { useEffect } from 'react';
 
 const nameRegEx = /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
 const phoneRegEx =
