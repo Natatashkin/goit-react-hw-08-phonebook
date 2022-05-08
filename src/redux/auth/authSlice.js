@@ -22,6 +22,15 @@ export const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
+
+    [logIn.rejected](state) {
+      state.isLoggedIn = false;
+    },
+
+    [signUp.rejected](state, action) {
+      state.isLoggedIn = false;
+    },
+
     [logOut.fulfilled](state, action) {
       state.user = initialState.user;
       state.token = initialState.token;

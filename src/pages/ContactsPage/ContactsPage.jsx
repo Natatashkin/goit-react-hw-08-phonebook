@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { Toaster } from 'react-hot-toast';
-import { AppSyles } from 'components/App.styled';
+
+import Container from '@mui/material/Container';
 import AppForm from 'components/Form';
 import Section from 'components/Section';
 import Filter from 'components/Filter';
@@ -31,7 +31,15 @@ export function ContactsPage() {
   const showSpiner = isLoading && !items;
 
   return (
-    <AppSyles>
+    <Container
+      maxWidth={'sm'}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        bgcolor: '#fff',
+      }}
+    >
       {!isRefreshingUser ? (
         <>
           <Section title="Add contact">
@@ -41,8 +49,8 @@ export function ContactsPage() {
             {showSpiner && <p>Loading...</p>}
             {showContacts && (
               <>
-                <Filter />
-                <ContactList />
+                {/* <Filter /> */}
+                {/* <ContactList /> */}
               </>
             )}
             {noContacts && <p>You haven't any contacts yet!</p>}
@@ -51,9 +59,7 @@ export function ContactsPage() {
       ) : (
         <h2>Loading...</h2>
       )}
-
-      <Toaster />
-    </AppSyles>
+    </Container>
   );
 }
 

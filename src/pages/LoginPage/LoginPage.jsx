@@ -1,11 +1,11 @@
-import { SignupForm } from 'components/SignupForm';
+import { LoginForm } from 'components/LoginForm';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Box from 'components/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Title from 'components/AuthPageTitle';
 
-export function SignupPage() {
+export function LoginPage() {
   return (
     <Container
       maxWidth={'sm'}
@@ -27,10 +27,10 @@ export function SignupPage() {
           <LockOutlinedIcon htmlColor="#001e3c" />
         </Avatar>
         <Title component="h1" variant="h4">
-          Sign Up
+          Sign in
         </Title>
 
-        <SignupForm />
+        <LoginForm />
       </Box>
     </Container>
   );

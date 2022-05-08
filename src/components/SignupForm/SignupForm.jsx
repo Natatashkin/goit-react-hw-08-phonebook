@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as authOperations from 'redux/auth/authOperations';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 export const SignupForm = () => {
   const dispatch = useDispatch();
@@ -10,7 +13,7 @@ export const SignupForm = () => {
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
-      case 'login':
+      case 'name':
         return setName(value);
       case 'email':
         return setEmail(value);
@@ -23,7 +26,6 @@ export const SignupForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log({ name, email, password });
     dispatch(authOperations.signUp({ name, email, password }));
     setName('');
     setEmail('');
@@ -31,39 +33,45 @@ export const SignupForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div aria-label="Form field for login">
-        <label htmlFor="login">
-          <input
-            type="text"
-            name="login"
-            value={name}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-      <div aria-label="Form field for password">
-        <label htmlFor="email">
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-      <div aria-label="Form field to repeat password">
-        <label htmlFor="password">
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
+    <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+      <TextField
+        margin="normal"
+        required
+        fullWidth
+        id="name"
+        label="Name"
+        name="name"
+        value={name}
+        autoComplete="name"
+        onChange={handleChange}
+      />
+      <TextField
+        margin="normal"
+        required
+        fullWidth
+        id="email"
+        label="Email"
+        name="email"
+        value={email}
+        autoComplete="email"
+        onChange={handleChange}
+      />
+      <TextField
+        margin="normal"
+        required
+        fullWidth
+        name="password"
+        label="Password"
+        type="password"
+        id="password"
+        value={password}
+        autoComplete="current-password"
+        onChange={handleChange}
+      />
 
-      <button type="submit">Login</button>
-    </form>
+      <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+        Sign Up
+      </Button>
+    </Box>
   );
 };

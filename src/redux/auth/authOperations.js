@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as phonebookAPI from 'services/phonebookAPI';
+import toast from 'react-hot-toast';
 
 export const signUp = createAsyncThunk(
   'auth/signup',
@@ -8,7 +9,8 @@ export const signUp = createAsyncThunk(
       const response = await phonebookAPI.signUpUser(credentials);
       return response;
     } catch (error) {
-      return rejectWithValue(error);
+      toast.error('We already have a user with such email!');
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -20,7 +22,8 @@ export const logIn = createAsyncThunk(
       const response = await phonebookAPI.logInUser(credentials);
       return response;
     } catch (error) {
-      return rejectWithValue(error);
+      toast.error('Login or password were rejected!');
+      return rejectWithValue(error.message);
     }
   }
 );

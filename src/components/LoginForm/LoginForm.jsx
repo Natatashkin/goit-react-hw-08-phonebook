@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as authOperations from 'redux/auth/authOperations';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -28,30 +31,34 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div aria-label="Form field for login">
-        <label htmlFor="email">
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
+    <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+      <TextField
+        margin="normal"
+        required
+        fullWidth
+        id="email"
+        label="Email"
+        name="email"
+        value={email}
+        autoComplete="email"
+        onChange={handleChange}
+      />
+      <TextField
+        margin="normal"
+        required
+        fullWidth
+        name="password"
+        label="Password"
+        type="password"
+        id="password"
+        value={password}
+        autoComplete="current-password"
+        onChange={handleChange}
+      />
 
-      <div aria-label="Form field for password">
-        <label htmlFor="password">
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-
-      <button type="submit">Login</button>
-    </form>
+      <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+        Log In
+      </Button>
+    </Box>
   );
 };
