@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import Container from '@mui/material/Container';
 import AppForm from 'components/Form';
 import Section from 'components/Section';
-import Filter from 'components/Filter';
-import ContactList from 'components/ContactList';
+// import Filter from 'components/Filter';
+// import ContactList from 'components/ContactList';
 
 import * as contactsOperations from 'redux/contacts/contactsOperations';
 import * as selectors from 'redux/contacts/contactsSelectors';
