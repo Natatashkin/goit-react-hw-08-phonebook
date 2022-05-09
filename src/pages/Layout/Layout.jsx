@@ -32,6 +32,7 @@ export function Layout() {
                     bgcolor: '#fff',
                     paddingTop: '32px',
                     paddingBottom: '32px',
+                    borderRadius: '4px',
                   }}
                 >
                   <Outlet />

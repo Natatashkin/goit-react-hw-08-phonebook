@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import AppForm from 'components/Form';
 import Section from 'components/Section';
-// import Filter from 'components/Filter';
+import Filter from 'components/Filter';
 import ContactList from 'components/ContactList';
 
 import * as contactsOperations from 'redux/contacts/contactsOperations';
@@ -40,7 +40,7 @@ export function ContactsPage() {
             {showSpiner && <p>Loading...</p>}
             {showContacts && (
               <>
-                {/* <Filter /> */}
+                <Filter />
                 <ContactList />
               </>
             )}

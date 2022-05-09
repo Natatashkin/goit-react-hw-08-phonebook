@@ -29,7 +29,7 @@ const Filter = () => {
         />
         {filterValue && (
           <IconButton
-            color="blue"
+            color="primary.main"
             type="button"
             aria-label="Clear filter"
             onClick={() => dispatch(resetFilterValue())}

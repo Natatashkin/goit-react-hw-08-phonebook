@@ -1,19 +1,19 @@
 import Container from '@mui/material/Container';
-import { FooterText, StyledFooter } from './Footer.styled';
+import { FooterText, StyledFooter, Link } from './Footer.styled';
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <Container maxWidth={'sm'}>
+      <Container maxWidth={'sm'} sx={{ padding: '16px 0px' }}>
         <FooterText>
-          Developed by
-          <a
+          Developed by &#169;
+          <Link
             href="https://linkedin.com/in/nataliia-semeshenko"
             target="_blank"
             rel="noreferrer"
           >
-            Nataliia Semeshenko
-          </a>
+            &nbsp;Nataliia Semeshenko
+          </Link>
         </FooterText>
       </Container>
     </StyledFooter>

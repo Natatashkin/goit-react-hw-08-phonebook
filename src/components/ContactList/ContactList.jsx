@@ -89,7 +89,11 @@ const ContactList = () => {
           </ListItemAvatar>
           <ListItemText
             primary={name}
-            sx={{ flexGrow: 4, color: 'text.primary' }}
+            sx={{
+              flexGrow: 4,
+              color: 'text.primary',
+              textTransform: 'capitalize',
+            }}
           />
           <ListItemText
             primary={number}
