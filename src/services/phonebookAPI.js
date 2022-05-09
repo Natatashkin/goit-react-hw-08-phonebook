@@ -32,6 +32,9 @@ export const logOutUser = async () => {
 };
 
 export const refreshCurrenthUser = async persistedToken => {
+  if (!persistedToken) {
+    throw Error(console.log('need to auth!!!'));
+  }
   token.set(persistedToken);
   try {
     const { data } = await axios.get('/users/current');

@@ -12,6 +12,7 @@ const ContentBox = styled(Box)`
   width: 90%;
   padding-top: 50px;
   padding-bottom: 50px;
+  text-transform: capitalize;
 `;
 
 export default ContentBox;

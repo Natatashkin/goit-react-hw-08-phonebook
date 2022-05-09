@@ -2,9 +2,9 @@ import React from 'react';
 import { Outlet, useMatch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import MainContainer from './Layout.styled';
+import Container from '@mui/material/Container';
 import AppBar from 'components/AppBar';
 import { getIsRefreshing } from 'redux/auth/authSelectors';
-import { LayoutWrapper } from './Layout.styled';
 import { HomePage } from 'pages/HomePage';
 import { Footer } from 'components/Footer';
 import { Toaster } from 'react-hot-toast';
@@ -14,7 +14,7 @@ export function Layout() {
   const isRefreshingUser = useSelector(getIsRefreshing);
 
   return (
-    <LayoutWrapper>
+    <>
       {!isRefreshingUser && (
         <>
           {currentPath ? (
@@ -23,7 +23,19 @@ export function Layout() {
             <>
               <AppBar />
               <MainContainer component="main">
-                <Outlet />
+                <Container
+                  maxWidth={'sm'}
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    bgcolor: '#fff',
+                    paddingTop: '32px',
+                    paddingBottom: '32px',
+                  }}
+                >
+                  <Outlet />
+                </Container>
               </MainContainer>
               <Footer />
               <Toaster />
@@ -31,6 +43,6 @@ export function Layout() {
           )}
         </>
       )}
-    </LayoutWrapper>
+    </>
   );
 }

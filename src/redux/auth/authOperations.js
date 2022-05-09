@@ -45,7 +45,6 @@ export const refresh = createAsyncThunk(
   async (_, { getState, rejectWithValue }) => {
     const state = getState();
     const persistedToken = state.phonebook.auth.token;
-
     if (!persistedToken) {
       return rejectWithValue();
     }

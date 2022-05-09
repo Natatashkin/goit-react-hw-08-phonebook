@@ -56,7 +56,7 @@ export const LoginForm = () => {
         onChange={handleChange}
       />
 
-      <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+      <Button type="submit" fullWidth variant="contained">
         Log In
       </Button>
     </Box>

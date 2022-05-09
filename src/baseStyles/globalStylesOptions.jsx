@@ -1,7 +1,9 @@
 const globalStylesOptions = {
-  html: {},
-  '#root': {},
+  html: {
+    height: '100%',
+  },
   body: {
+    height: '100%',
     margin: 0,
     fontFamily: `${({ theme: { typography } }) => typography.fontFamily}`,
     WebkitFontSmoothing: 'antialiased',
@@ -9,8 +11,14 @@ const globalStylesOptions = {
     background: `${({ theme: { palette } }) => palette.background.default}`,
     fontSize: `${({ theme: { typography } }) => typography.htmlFontSize}`,
   },
+  '#root': {
+    minHeight: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
   code: {
     fontFamily: [
+      'Roboto',
       'source-code-pro',
       'Menlo',
       'Monaco',
@@ -24,12 +32,6 @@ const globalStylesOptions = {
   },
   p: {
     margin: 0,
-  },
-  ul: {
-    listStyle: 'none',
-    paddingLeft: 0,
-    marginTop: 0,
-    marginBottom: 0,
   },
 };
 export default globalStylesOptions;

@@ -2,11 +2,10 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Container from '@mui/material/Container';
 import AppForm from 'components/Form';
 import Section from 'components/Section';
-// import Filter from 'components/Filter';
-// import ContactList from 'components/ContactList';
+import Filter from 'components/Filter';
+import ContactList from 'components/ContactList';
 
 import * as contactsOperations from 'redux/contacts/contactsOperations';
 import * as selectors from 'redux/contacts/contactsSelectors';
@@ -31,15 +30,7 @@ export function ContactsPage() {
   const showSpiner = isLoading && !items;
 
   return (
-    <Container
-      maxWidth={'sm'}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        bgcolor: '#fff',
-      }}
-    >
+    <>
       {!isRefreshingUser ? (
         <>
           <Section title="Add contact">
@@ -50,7 +41,7 @@ export function ContactsPage() {
             {showContacts && (
               <>
                 {/* <Filter /> */}
-                {/* <ContactList /> */}
+                <ContactList />
               </>
             )}
             {noContacts && <p>You haven't any contacts yet!</p>}
@@ -59,7 +50,7 @@ export function ContactsPage() {
       ) : (
         <h2>Loading...</h2>
       )}
-    </Container>
+    </>
   );
 }
 

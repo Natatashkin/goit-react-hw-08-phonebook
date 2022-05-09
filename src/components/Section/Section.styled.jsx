@@ -4,11 +4,11 @@ const SectionStyled = styled('section')`
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  padding: ${({ theme: { spacing } }) => spacing(8, 8, 0, 8)};
+  padding: ${({ theme: { spacing } }) => spacing(0, 6)};
 `;
 
 const Title = styled('h2')`
-  margin-bottom: ${({ theme: { spacing } }) => spacing(6)};
+  margin-bottom: ${({ theme: { spacing } }) => spacing(4)};
   color: ${({ theme: { palette } }) => palette.text.primary};
 `;
 

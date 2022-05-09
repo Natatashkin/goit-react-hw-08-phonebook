@@ -18,7 +18,6 @@ const schema = yup.object().shape({
 });
 
 const AppForm = ({ contacts }) => {
-  console.log(contacts);
   const dispatch = useDispatch();
 
   const checkUniqueName = newName => {

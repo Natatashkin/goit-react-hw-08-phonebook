@@ -27,16 +27,16 @@ export const authSlice = createSlice({
       state.isLoggedIn = false;
     },
 
-    [signUp.rejected](state, action) {
+    [signUp.rejected](state) {
       state.isLoggedIn = false;
     },
 
-    [logOut.fulfilled](state, action) {
+    [logOut.fulfilled](state) {
       state.user = initialState.user;
       state.token = initialState.token;
       state.isLoggedIn = initialState.isLoggedIn;
     },
-    [refresh.pending](state, action) {
+    [refresh.pending](state) {
       state.isRefreshing = true;
     },
     [refresh.fulfilled](state, action) {
