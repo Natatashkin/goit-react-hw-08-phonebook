@@ -1,7 +1,10 @@
 import React from 'react';
-import IconButton from '../IconButton';
-import { FilterWrapper, Input } from './Filter.styled';
-import { FaTimes } from 'react-icons/fa';
+
+import { FilterWrapper } from './Filter.styled';
+import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+
 import { useDispatch, useSelector } from 'react-redux';
 import * as selectors from 'redux/contacts/contactsSelectors';
 import {
@@ -19,22 +22,24 @@ const Filter = () => {
 
   return (
     <>
-      <label htmlFor="filter">Find contact by name:</label>
       <FilterWrapper>
-        <Input
-          type="text"
-          name="filter"
+        <TextField
+          id="standard-basic"
+          label="Enter contact name"
+          variant="standard"
           value={filterValue}
           onChange={handleFilterChange}
         />
+
         {filterValue && (
           <IconButton
-            color="primary.main"
-            type="button"
-            aria-label="Clear filter"
+            aria-label="clear filter"
+            color="primary"
+            size="small"
+            sx={{ alignSelf: 'end' }}
             onClick={() => dispatch(resetFilterValue())}
           >
-            <FaTimes />
+            <ClearOutlinedIcon fontSize="small" />
           </IconButton>
         )}
       </FilterWrapper>

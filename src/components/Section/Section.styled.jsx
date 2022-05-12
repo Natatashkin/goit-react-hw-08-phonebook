@@ -5,6 +5,10 @@ const SectionStyled = styled('section')`
   margin-left: auto;
   margin-right: auto;
   padding: ${({ theme: { spacing } }) => spacing(0, 6)};
+
+  @media (max-width: 600px) {
+    padding: ${({ theme: { spacing } }) => spacing(0, 3)};
+  }
 `;
 
 const Title = styled('h2')`

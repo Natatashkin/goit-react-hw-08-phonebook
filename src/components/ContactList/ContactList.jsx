@@ -71,6 +71,7 @@ const ContactList = () => {
       {filteredContacts.map(({ id, name, number }) => (
         <ListItem
           key={id}
+          sx={{ paddingLeft: '0px', paddingRight: '32px' }}
           secondaryAction={
             <IconButton
               edge="end"
@@ -79,6 +80,7 @@ const ContactList = () => {
               onClick={() =>
                 dispatch(contactsOperations.deleteContact({ id, name }))
               }
+              sx={{ marginRight: '-28px' }}
             >
               <DeleteIcon />
             </IconButton>
